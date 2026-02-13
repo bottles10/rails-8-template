@@ -215,7 +215,7 @@ after_bundle do
 
   say "✅ Devise setup complete!"
 
-  say ":warning:Read the below carefully!"
+  say "⚠️ Read the below instructions carefully!"
   say "======================================"
   say "Uncomment or Add the following to devise initilizer" 
   say "if you want to use eg: username for authentication"
