@@ -1,0 +1,36 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="mt-8 -mb-12 flex flex-col items-center justify-center">  
+    <div class="w-full md:w-3/5 p-6 flex flex-col items-center justify-center bg-white space-y-4 shadow-2xl rounded-lg">
+
+      <div>
+        <h2 class="text-2xl font-bold text-center">Log in</h2>
+        <p class="font-semibold text-lg text-center">Or<span class="text-blue-600"><%= link_to " sign up for an account", new_user_registration_path %></span></p>
+      </div>
+
+
+      <div class="w-full">
+        <%= f.label :username, class: "font-medium" %><br />
+        <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "happy24", class: "w-full py-1 px-3 border border-pink-100 focus:border-pink-500 outline-none rounded-md" %>
+      </div>
+
+      <div class="w-full">
+        <%= f.label :password, class: "font-medium" %><br />
+        <%= f.password_field :password, autocomplete: "current-password", class: "w-full py-1 px-3 border border-pink-100 focus:border-pink-500 outline-none rounded-md" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="flex items-center space-x-2">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me, class: "font-medium" %>
+        </div>
+      <% end %>
+
+      <div class="w-full">
+        <%= f.submit "Log in", class: "btn w-full bg-pink-500 hover:bg-pink-400 text-pink-100 transition duration-300 cursor-pointer" %>
+      </div>
+      <%= link_to "Forgot your password?", new_password_path(resource_name), class: "text-blue-600 font-medium" %><br />
+      <%# render "devise/shared/links" %>
+    </div>
+  </div>
+<% end %>
+

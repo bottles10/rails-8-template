@@ -1,0 +1,42 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class="mt-8 -mb-12 flex flex-col items-center justify-center">  
+    <div class="w-full md:w-3/5 p-6 flex flex-col items-center justify-center bg-white space-y-4 shadow-2xl rounded-lg">
+      
+      <div class="mb-8">
+        <h2 class="mb-2 text-3xl font-extrabold text-center">Sign up</h2>
+        <p class="font-semibold text-lg">Or<span class="text-blue-600"><%= link_to " log in to your account", new_user_session_path %></span></p>
+      </div>
+
+      <%= render "devise/shared/error_messages", resource: resource %>
+    
+      <div class="w-full">
+        <%= f.label :username, class: "font-medium" %><br />
+        <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "happy24", class: "w-full py-1 px-3 border border-pink-100 focus:border-pink-500 outline-none rounded-md" %>
+      </div>
+
+      <div class="w-full">
+        <%= f.label :email, class: "font-medium" %><br />
+        <%= f.email_field :email, autocomplete: "email", placeholder: "johndoe11@mail.com", class: "w-full py-1 px-3 border border-pink-100 focus:border-pink-500 outline-none rounded-md" %>
+      </div>
+
+      <div class="w-full">
+        <%= f.label :password, class: "font-medium" %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password", class: "w-full py-1 px-3 border border-pink-100 focus:border-pink-500 outline-none rounded-md" %>
+      </div>
+
+      <div class="w-full">
+        <%= f.label :password_confirmation, class: "font-medium" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full py-1 px-3 border border-pink-100 focus:border-pink-500 outline-none rounded-md" %>
+      </div>
+
+      <div class="w-full mt-6">
+        <%= f.submit "Sign up", class: "btn w-full bg-pink-500 hover:bg-pink-400 text-pink-100 transition duration-300 cursor-pointer" %>
+      </div>
+      <%# render "devise/shared/links" %>
+    </div>
+  </div>
+<% end %>
+

@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@utility btn {
+    @apply inline-block py-2 px-3 rounded shadow cursor-pointer;
+}
+
+@utility btn-primary {
+    @apply text-purple-100 bg-purple-500 hover:bg-purple-600 transition duration-300; 
+}
+
+@utility muted {
+    @apply text-gray-300;
+}
+
+@utility actions {
+    @apply py-1 px-2 text-xs text-gray-500;
+}
+
+@utility form-control {
+    @apply w-full py-2 px-3 border border-gray-200 focus:border-purple-300 rounded outline-none;
+}
+
+@utility header {
+    @apply font-medium text-3xl;
+}
+
+@utility turbo-progress-bar {
+    @apply bg-linear-to-r! from-pink-300 to-pink-500;
+}

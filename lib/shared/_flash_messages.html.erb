@@ -1,0 +1,15 @@
+<% if notice %>
+    <div data-controller="flash" data-flash-target="alert" class="max-w-7xl mx-auto mt-2 px-4 sm:px-6 lg:px-8 xl:px-10" role="alert">
+        <div class="py-2 px-2 text-purple-800 bg-purple-200 border border-purple-500 rounded">
+            <%= notice %>    
+        </div>
+    </div>
+<% end %>
+
+<% if alert %>
+    <div data-controller="flash" data-flash-target="alert" class="max-w-7xl mx-auto mt-2 px-4 sm:px-6 lg:px-8 xl:px-10" role="alert">
+        <div class="py-2 px-2 text-red-800 bg-red-200 border border-red-500 rounded">
+            <%= alert %>    
+        </div>
+    </div>
+<% end %>

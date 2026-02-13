@@ -1,0 +1,22 @@
+<nav class="w-full backdrop-blur-md border-b border-b-gray-200 shadow-sm">
+    <div class="max-w-7xl py-3 px-4 sm:px-6 lg:px-8 xl:px-10 flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+            <h1><%= link_to Rails.application.name.titleize, root_path %></h1>
+            <span class="font-medium text-sm text-gray-500"><%= link_to "Nav 2", "#" %></span>
+            <span class="font-medium text-sm text-gray-500"><%= link_to "Nav 3", "#" %></span>
+            <span class="font-medium text-sm text-gray-500"><%= link_to "Nav 4", "#" %></span>
+        </div>
+    
+        <% if user_signed_in? %>
+            <div class="flex items-center space-x-4">
+                <span class="font-medium text-sm text-gray-500"><%= link_to Current.user.username, edit_user_registration_path %></span>
+                <span class="font-medium text-sm text-gray-500"><%= button_to "Logout", destroy_user_session_path, method: :delete, class: "cursor-pointer" %></span>
+            </div>
+        <% else %>
+            <div class="flex items-center space-x-4">
+                <span class="font-medium text-sm text-gray-500"><%= link_to "Sign Up", new_user_registration_path %></span>
+                <span class="font-medium text-sm text-gray-500"><%= link_to "Login", new_user_session_path %></span>
+            </div>
+        <% end %>
+    </div>
+</nav>

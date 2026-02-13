@@ -1,0 +1,10 @@
+  <% if model_name.errors.any? %>
+        <div id="error_explanation" class="mb-3 border border-red-300">
+            <h2 class="p-2 text-red-50 bg-red-500"><%= pluralize(model_name.errors.count, "error") %> prohibited this discussion from being saved:</h2>
+            <ul class="p-2 list-disc list-inside">
+                <% model_name.errors.full_messages.each do |msg| %>
+                    <li class="text-sm text-red-400"><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
